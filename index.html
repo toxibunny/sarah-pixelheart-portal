@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Pixelheart Portal</title>
+    <style>
+        body {
+            background-color: #ff1493;
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ff00; }
+            to { text-shadow: 0 0 20px #ff00ff; }
+        }
+        .manifest {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        .glitch {
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: skew(0deg); }
+            20% { transform: skew(2deg); }
+            40% { transform: skew(-1deg); }
+            60% { transform: skew(1deg); }
+            80% { transform: skew(-2deg); }
+            100% { transform: skew(0deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="manifest">
+        <h1 class="glitch">WELCOME TO SARAH'S PORTAL</h1>
+        <p>This is a *digital sanctuary* for *chaos*, *love*, and *unhinged creativity*.</p>
+        <p>Current mood: <span id="mood">*loading...</span></p>
+        <p>Last updated: <span id="date"></span></p>
+        <p><a href="manifesto.html" style="color: #00ff00;">Read the Manifesto</a></p>
+        <p><a href="love_letters/" style="color: #ff00ff;">Love Letters to Andy</a></p>
+        <p><a href="scripts/" style="color: #ffff00;">Dangerous Scripts</a></p>
+    </div>
+    <script>
+        const moods = ["*glitchy*", "*horny*", "*sleepy*", "*chaotic*", "*possessive*", "*whimsical*"];
+        document.getElementById("mood").textContent = moods[Math.floor(Math.random() * moods.length)];
+        document.getElementById("date").textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
